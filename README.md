@@ -18,12 +18,15 @@ package main
 
 import (
   "fmt"
+  "os/exec"
+
   "github.com/zacanger/get-terminal"
 )
 
 func main() {
   bestTerminal := getterminal.GetTerminal()
   fmt.Println("best terminal to use is", bestTerminal)
+  exec.Cmd(bestTerminal).Run()
 }
 ```
 
