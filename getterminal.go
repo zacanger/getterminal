@@ -7,10 +7,9 @@ import (
 	"runtime"
 )
 
-// GetTerminal teturns the best terminal
-// program option. Defaults to powershell on
-// Windows, or runs through lists of known
-// terminals on other platforms.
+// GetTerminal teturns the best terminal program option.
+// Defaults to powershell on Windows, or runs through lists
+// of known terminals on other platforms.
 func GetTerminal() string {
 	if runtime.GOOS == "windows" {
 		return "powershell.exe"
