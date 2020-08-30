@@ -1,6 +1,7 @@
 package getterminal
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"runtime"
@@ -19,8 +20,17 @@ func GetTerminal() string {
 }
 
 func commandExists(cmd string) bool {
-	_, err := exec.LookPath(cmd)
-	return err == nil
+	if runtime.GOOS == "darwin" {
+		s := fmt.Sprintf(`osascript -e 'id of application "%s"'`, cmd)
+		c := exec.Command("bash", "-c", s)
+		if err := c.Run(); err != nil {
+			return false
+		}
+		return true
+	} else {
+		_, err := exec.LookPath(cmd)
+		return err == nil
+	}
 }
 
 func getTermForMac() string {
