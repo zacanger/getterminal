@@ -27,4 +27,8 @@ func main() {
 }
 ```
 
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING](/.github/CONTRIBUTING.md)
+
 [LICENSE](./LICENSE.md)

@@ -71,6 +71,7 @@ func getBestTermForUnix() string {
 		"guake",
 		"hyper",
 		"kitty",
+		"finalterm",
 		"konsole",
 		"lilyterm",
 		"lxterminal",
@@ -84,8 +85,10 @@ func getBestTermForUnix() string {
 		"terminology",
 		"termit",
 		"termite",
+		"termkit",
 		"tilda",
 		"tilix",
+		"wterm",
 		"xfce4-terminal",
 		"yakuake",
 
