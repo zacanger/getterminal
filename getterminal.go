@@ -27,6 +27,7 @@ func commandExists(cmd string) bool {
 	if runtime.GOOS == "darwin" {
 		return commandExistsMac(cmd)
 	}
+
 	return commandExistsOther(cmd)
 }
 
@@ -41,6 +42,7 @@ func commandExistsMac(cmd string) bool {
 	if err := c.Run(); err != nil {
 		return false
 	}
+
 	return true
 }
 
