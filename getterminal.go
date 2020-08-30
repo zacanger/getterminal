@@ -25,16 +25,23 @@ func GetTerminal() string {
 
 func commandExists(cmd string) bool {
 	if runtime.GOOS == "darwin" {
-		s := fmt.Sprintf(`osascript -e 'id of application "%s"'`, cmd)
-		c := exec.Command("bash", "-c", s)
-		if err := c.Run(); err != nil {
-			return false
-		}
-		return true
-	} else {
-		_, err := exec.LookPath(cmd)
-		return err == nil
+		return commandExistsMac(cmd)
 	}
+	return commandExistsOther(cmd)
+}
+
+func commandExistsOther(cmd string) bool {
+	_, err := exec.LookPath(cmd)
+	return err == nil
+}
+
+func commandExistsMac(cmd string) bool {
+	s := fmt.Sprintf(`osascript -e 'id of application "%s"'`, cmd)
+	c := exec.Command("bash", "-c", s)
+	if err := c.Run(); err != nil {
+		return false
+	}
+	return true
 }
 
 func getTermForMac() string {
