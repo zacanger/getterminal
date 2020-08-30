@@ -23,7 +23,7 @@ import (
 
 func main() {
   bestTerminal := getterminal.GetTerminal()
-  fmt.Println("best terminal to use is %s\n", bestTerminal)
+  fmt.Println("best terminal to use is", bestTerminal)
 }
 ```
 
