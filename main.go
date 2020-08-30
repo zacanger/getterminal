@@ -6,7 +6,7 @@ import (
 	"runtime"
 )
 
-func main() string {
+func GetTerminal() string {
 	if runtime.GOOS == "windows" {
 		return "powershell.exe"
 	}
