@@ -4,8 +4,9 @@
 
 --------
 
-Get the best terminal the user has installed.
-Go port of my Node package [get-term](https://npm.im/get-term).
+Get the best terminal the user has installed. Known to work on Linux, does not
+work on Windows or Mac yet. Go port of my Node package
+[get-term](https://npm.im/get-term).
 
 ## Installation
 
