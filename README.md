@@ -2,6 +2,8 @@
 
 --------
 
+[Donate](https://ko-fi.com/zacanger)
+
 Get the best terminal the user has installed. Go port of my Node package
 [get-term](https://npm.im/get-term).
 
